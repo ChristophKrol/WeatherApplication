@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets\css\style.css">
+    <title>Weatherio</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <header class="header">
+        <div class="header-div container-fluid">
+            <img class="app-logo " src="assets/images/logo.png" alt="App Logo">
+            
+            <div class="search-results rounded-5" > <!-- active-item, um anzuzeigen  -->
+                <div class="searchBar ">
+                    <button class="btn standard-btn rounded-5" id="back-arrow-btn" type="button">
+                        <img src="assets/images/arrow_back.svg" alt="Arrow Back">
+                    </button>
+                    <input id="searchQueryInput" type="search" name="searchQueryInput" placeholder="Search city" value="" />
+                    <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="results-list">
+                        
+                </ul>
+            </div>    
+            <div class="container header-buttons">
+                <button class="btn rounded-5 standard-btn" id="search-btn">
+                    <img src="assets/images/search.svg" alt="Search">
+                </button>
+    
+                <button type="button" class="btn btn-primary rounded-5" id="get-location-btn">
+                    <img id="current-location" src="assets/images/my_location.svg">
+                    <span>Current Location</span>
+                </button>
+            </div>
+        </div>  
+    </header>
+        <div class="row">
+            <div class="col-xxl-4 col-xl-6 col-lg-5 ">
+                <section class="todays-weather">
+                    <div class="standard-card container rounded-5">
+                        <div class="container upper-info">
+                            <div class="col">
+                                <h5> Now </h5>
+                                <h1 id="temperature-value">13&deg;C</h1>
+                                <p id="description-value">Overcast Clouds</p>
+                            </div>    
+                            <div class="col">
+                                <img src="assets/images/weather_icons/03d.png" id="weather-icon">
+                            </div>  
+                        </div>
+                        <div class="lower-info">
+                            <div class="info-sm">
+                                <img src="assets/images/calendar_today.svg" class="info-sm">
+                                <p class="info-text" id="date-value"> Wednesday 22, Mar </p>
+                                
+                            </div>       
+                            <div class="info-sm">
+                                <img src="assets/images/location2.svg" class="info-sm">
+                                <p class="info-text" id="location-value"> Regensburg, GER </p>
+                            </div>
+                        </div> 
+                    </div>
+                </section> 
+                <section class="7-days-forecast"> <!-- 5-days -->
+                    <div class="container">
+                        <h4> 5 Days Forecast </h4>
+                        <div class="standard-card container rounded-5">
+                            <div class="day-forecast ">
+                                <span class="forecast-span">
+                                    <img src="assets/images/weather_icons/01n.png" class="forecast-icon" id="icon-0">
+                                    <h4 id="temp-0"> 14 </h4>
+                                </span>
+                                <p id="date-0"> 23 Mar </p>
+                                <p id="day-0"> Wednesday </p>
+                            </div>
+                            <div class="day-forecast ">
+                                <span class="forecast-span">
+                                    <img src="assets/images/weather_icons/01n.png" class="forecast-icon" id="icon-1">
+                                    <h4 id="temp-1"> 14 </h4>
+                                </span>
+                                <p id="date-1"> 23 Mar </p>
+                                <p id="day-1"> Wednesday </p>
+                            </div>
+                            <div class="day-forecast ">
+                                <span class="forecast-span">
+                                    <img src="assets/images/weather_icons/01n.png" class="forecast-icon" id="icon-2">
+                                    <h4 id="temp-2"> 14 </h4>
+                                </span>
+                                <p id="date-2"> 23 Mar </p>
+                                <p id="day-2"> Wednesday </p>
+                            </div>
+                            <div class="day-forecast ">
+                                <span class="forecast-span">
+                                    <img src="assets/images/weather_icons/01n.png" class="forecast-icon" id="icon-3">
+                                    <h4 id="temp-3"> 14 </h4>
+                                </span>
+                                <p id="date-3"> 23 Mar </p>
+                                <p id="day-3"> Wednesday </p>
+                            </div>
+                            <div class="day-forecast ">
+                                <span class="forecast-span">
+                                    <img src="assets/images/weather_icons/01n.png" class="forecast-icon" id="icon-4">
+                                    <h4 id="temp-4"> 14 </h4>
+                                </span>
+                                <p id="date-4"> 23 Mar </p>
+                                <p id="day-4"> Wednesday </p>
+                            </div>
+                        
+                        </div>
+                    </div> 
+                </section>
+
+            </div>
+            <div class="col-xxl-8 col-xl-6 col-lg-7 ">
+                 <section class="todays-highlights">
+                    <div class="standard-card container rounded-5 ">
+                        <div class="row ">
+                            <h4> Todays Highlights </h4>
+                            <div class="  col-xl-6 px-2">
+                                <div class="highlight-card-xl rounded-5">
+                                    <div>
+                                        <h4> Sunrise & Sunset </h4>
+                                    </div>
+                                    <div class="subcard">
+                                        <span class="span-xl">
+                                            <img src="assets/images/sunny.svg">
+                                            <h5 > Sunrise </h5>
+                                            <h3 id="sunrise-value"> 6:45 </h3>
+                                        </span>
+                                        <span class="span-xl" id="right-span">
+                                            <img src="assets/images/moon.svg">
+                                            <h5 > Sunset </h5>
+                                            <h3 id="sunset-value"> 18:45 </h3>
+                                        </span>
+                                    </div> 
+                                </div>   
+                            </div>
+                            <div class="col-xl-6 px-2">
+                                <div class="highlight-card-xl rounded-5">
+                                    <div id="air-quality-header-div">
+                                        <h4> Air Quality Index </h4>
+                                        <span class="quality-status rounded-5 quality-good" id="aqi"> <h4 id="aqi-text">Good</h4> </span>
+                                    </div>
+                                    <div class="subcard">
+                                        <span class="span-xl">
+                                            <img src="assets/images/air.svg">
+                                            <h5 > PM2.5 </h5>
+                                            <h3 id="pm25"> 3.90 </h3>
+                                        </span>
+                                        <span class="span-xl" id="right-span">
+                                            <img src="assets/images/moon.svg" class="hidden-item">
+                                            <h5 > SO2 </h5>
+                                            <h3 id="so2"> 38.6 </h3>
+                                        </span>
+                                        <span class="span-xl" id="right-span">
+                                            <img src="assets/images/moon.svg" class="hidden-item">
+                                            <h5 > NO2 </h5>
+                                            <h3 id="no2"> 38.6 </h3>
+                                        </span>
+                                        <span class="span-xl" id="right-span">
+                                            <img src="assets/images/moon.svg" class="hidden-item">
+                                            <h5 > O3 </h5>
+                                            <h3 id="o3"> 38.6 </h3>
+                                        </span>
+                                    </div>  
+                                </div>
+                            </div>
+                            <div class=" col-xxl-3 col-lg-6 px-2">
+                                <div class="highlight-card rounded-5">
+                                    <span>
+                                        <h4> Humidity </h4>
+                                        <img src="assets/images/humidity.svg">
+                                    </span>
+                                    <h4 id="humidity-value"> 35 % </h4>
+
+                                </div>
+                                
+                            </div>
+                            <div class="col-xxl-3 col-lg-6 px-2">
+                                <div class="highlight-card rounded-5">
+                                    <span>
+                                        <h4> Visibility </h4>
+                                        <img src="assets/images/visibility.svg">
+                                    </span>
+                                    <h4 id="visibility-value"> 8 km </h4>
+                                </div>
+                                
+                            </div>
+                            <div class="col-xxl-3 col-lg-6 ">
+                                <div class="highlight-card rounded-5">
+                                    <span>
+                                        <h4> Pressure </h4>
+                                        <img src="assets/images/pressure.svg">
+                                    </span>
+                                    <h4 id="pressure-value"> 1000 hPa </h4>
+                                </div>   
+                            </div>
+                            <div class="col-xxl-3 col-lg-6 ">
+                                <div class="highlight-card rounded-5">
+                                    <span>
+                                        <h4> Feels Like </h4>
+                                        <img src="assets/images/thermometer.svg">
+                                    </span>
+                                    <h4 id="feelsLike-value"> 10 &deg;C </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </section>   
+                
+                <section class="hourly-forecast"> <!-- 3hour-forecast -->
+                    <div class="container slider-container">
+                        <h4> Todays Weather </h4>
+                        <ul class="hourly-list">
+                            <li class="hourly-weather-item standard-li rounded-5">
+                                <span class="hourly-info">
+                                    <h4 id="hour-0">9:00</h4>
+                                    <img src="assets/images/weather_icons/04n.png" class="weather-icon" id="weather-icon-0">
+                                    <h5 id="temp-val-0"> 10&deg;C <h5>
+                                </span>
+                            </li>
+                            <li class="hourly-weather-item standard-li rounded-5">
+                                <span class="hourly-info">
+                                    <h4 id="hour-1">9:00</h4>
+                                    <img src="assets/images/weather_icons/04n.png" class="weather-icon" id="weather-icon-1">
+                                    <h5 id="temp-val-1"> 10&deg;C <h5>
+                                </span>
+                            </li>
+                            <li class="hourly-weather-item standard-li rounded-5">
+                                <span class="hourly-info">
+                                    <h4 id="hour-2">9:00</h4>
+                                    <img src="assets/images/weather_icons/04n.png" class="weather-icon" id="weather-icon-2">
+                                    <h5 id="temp-val-2"> 10&deg;C <h5>
+                                </span>
+                            </li>
+                            <li class="hourly-weather-item standard-li rounded-5">
+                                <span class="hourly-info">
+                                    <h4 id="hour-3">9:00</h4>
+                                    <img src="assets/images/weather_icons/04n.png" class="weather-icon" id="weather-icon-3">
+                                    <h5 id="temp-val-3"> 10&deg;C <h5>
+                                </span>
+                            </li>
+                            <li class="hourly-weather-item standard-li rounded-5">
+                                <span class="hourly-info">
+                                    <h4 id="hour-4">9:00</h4>
+                                    <img src="assets/images/weather_icons/04n.png" class="weather-icon" id="weather-icon-4">
+                                    <h5 id="temp-val-4"> 10&deg;C <h5>
+                                </span>
+                            </li>
+                            <li class="hourly-weather-item standard-li rounded-5">
+                                <span class="hourly-info">
+                                    <h4 id="hour-5">9:00</h4>
+                                    <img src="assets/images/weather_icons/04n.png" class="weather-icon" id="weather-icon-5">
+                                    <h5 id="temp-val-5"> 10&deg;C <h5>
+                                </span>
+                            </li>
+                            <li class="hourly-weather-item standard-li rounded-5">
+                                <span class="hourly-info">
+                                    <h4 id="hour-6">9:00</h4>
+                                    <img src="assets/images/weather_icons/04n.png" class="weather-icon" id="weather-icon-6">
+                                    <h5 id="temp-val-6"> 10&deg;C <h5>
+                                </span>
+                            </li>
+                            <li class="hourly-weather-item standard-li rounded-5">
+                                <span class="hourly-info">
+                                    <h4 id="hour-7">9:00</h4>
+                                    <img src="assets/images/weather_icons/04n.png" class="weather-icon" id="weather-icon-7">
+                                    <h5 id="temp-val-7"> 10&deg;C <h5>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </section> 
+
+            </div>
+            
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="assets/js/api.js"></script>
+        <script src="assets/js/application.js"></script>
+    </body>
+
+</html>

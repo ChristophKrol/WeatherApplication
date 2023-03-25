@@ -1,0 +1,47 @@
+<li class="result">
+    <div class="results">
+        <img src="assets/images/location.svg" id="location-icon" alt="Location">
+        <div class="location-data">
+            <p class="location-name"> Regensburg </p>
+            <p class="location-state-name"> Bayern, GER </p> 
+            <p class="disabled-item" id="lat"> 12 </p>
+            <p class="disabled-item" id="lon"> 12 </p>
+        </div>   
+        <a href="#" class="location-link" ></a>
+    </div> 
+</li>
+
+
+country
+: 
+"PL"
+lat
+: 
+53.5310786
+local_names
+: 
+{pl: 'Drawsko Pomorskie', de: 'Dramburg', ru: 'Дравско-Поморске', uk: 'Дравско Поморске'}
+lon
+: 
+15.8134179
+name
+: 
+"Drawsko Pomorskie"
+state
+: 
+"West Pomeranian Voivodeship"
+
+
+
+ let newListElement = $("<li>").addClass("result").append(
+                     $("<div>").addClass("results").append(
+                       $("<img>").attr("src", "assets/images/location.svg").attr("id", "location-icon").attr("alt", "Location"),
+                       $("<div>").addClass("location-data").append(
+                         $("<p>").addClass("location-name").text(location.name),
+                         $("<p>").addClass("location-state-name").text(`${location.state}, ${location.country}`),
+                       ),
+                       $("<a>").addClass("location-link").attr("href", "#")
+                     )
+                 )
+                 // Append on result list 
+                 $(".results-list").append(newListElement)
